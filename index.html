@@ -1,44 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Ismail Tasdelen</title>
-  <meta content="security researcher, security consultant, bug bounty, bug bounty hunter, web security, penetration testing, cyber security, information security, siber güvenlik, bilgi güvenliği" name="keywords">
-  <meta content="Security Consultant" name="description">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-  <link href="assets/lib/hover/hover.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/responsive.css" rel="stylesheet">
-  <link rel="shortcut icon" href="images/favicon.png">
-</head>
-<body>
-  <div id="header" class="home">
-    <div class="container">
-      <div class="header-content">
-        <h1>I'm <span class="typed"></span></h1>
-        <p>security researcher, bug bounty hunter, developer</p>
-        <ul class="list-unstyled list-social">
-		  <li><a href="https://github.com/ismailtasdelen" target="_blank"><i class="ion-social-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/ismailtasdelen/" target="_blank"><i class="ion-social-linkedin" target="_blank"></i></a></li>
-          <li><a href="https://twitter.com/@ismailtsdln" target="_blank"><i class="ion-social-twitter"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCPqc50Wmt6ZF2BJWtNJlq-g"><i class="ion-social-youtube" target="_blank"></i></a></li>
-		  <li><a href="https://www.instagram.com/mr.ismailtasdelen/" target="_blank"><i class="ion-social-instagram"></i></a></li>
-		  <li><a href="https://www.facebook.com/mr.ismailtasdelen" target="_blank"><i class="ion-social-facebook"></i></a></li>
-      </div>
+---
+layout: default
+---
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#footer" class="icon fa-info-circle">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        {% for image in site.static_files %}
+        {% if image.path contains 'fulls' %}
+        <article class="thumb">
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+            <!--<h2></h2>
+            <p></p>-->
+        </article>
+        {% endif %}
+        {% endfor %}
     </div>
-  </div>
-  <script src="assets/lib/jquery/jquery.min.js"></script>
-  <script src="assets/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/lib/typed/typed.js"></script>
-  <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="assets/lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="assets/lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+
+    <!-- Footer -->
+    <footer id="footer" class="panel">
+        <div class="inner split">
+            <div>
+                <section>
+                    <h2>{{ site.footer.name }}</h2>
+                    <p>{{ site.footer.bio }}</p>
+                    <p>{{ site.footer.github }}</p>
+                </section>
+                <section>
+                    <h2>Sponsor</h2>
+                    <div class="ad">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle"
+                             style="display:block; text-align:center;"
+                             data-ad-layout="in-article"
+                             data-ad-format="fluid"
+                             data-ad-client="ca-pub-1702577941194110"
+                             data-ad-slot="9823584598"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </section>
+                <section>
+                    <h2>Follow me on ...</h2>
+                    <ul class="icons">
+                        {% if site.social_urls.facebook %}
+                            <li>
+                                <a href="{{ site.social_urls.facebook }}" class="icon fa-facebook">
+                                    <span class="label">Facebook</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.twitter %}
+                            <li>
+                                <a href="{{ site.social_urls.twitter }}" class="icon fa-twitter">
+                                    <span class="label">Twitter</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.instagram %}
+                            <li>
+                                <a href="{{ site.social_urls.instagram }}" class="icon fa-instagram">
+                                    <span class="label">Instagram</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.dribbble %}
+                            <li>
+                                <a href="{{ site.social_urls.dribbble }}" class="icon fa-dribbble">
+                                    <span class="label">Dribbble</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.github %}
+                            <li>
+                                <a href="{{ site.social_urls.github }}" class="icon fa-github">
+                                    <span class="label">GitHub</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if site.social_urls.linkedin %}
+                            <li>
+                                <a href="{{ site.social_urls.linkedin }}" class="icon fa-linkedin">
+                                    <span class="label">LinkedIn</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </section>
+                <p class="copyright">
+                    &copy; {{ site.author }}. Design: {{ site.web_design }}
+                </p>
+            </div>
+            <div>
+                <section>
+                    <h2>Get in touch</h2>
+                    <form method="post" action="#">
+                        <div class="field half first">
+                            <input type="text" name="name" id="name" placeholder="Name"/>
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="email" id="email" placeholder="Email"/>
+                        </div>
+                        <div class="field">
+                            <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send" class="special"/></li>
+                            <li><input type="reset" value="Reset"/></li>
+                        </ul>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </footer>
+</div>
