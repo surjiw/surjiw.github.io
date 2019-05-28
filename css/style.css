@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: 50px;
     background: #fff;
-    box-shadow: 0 0 10px #666; 
+    box-shadow: 0 0 10px #666;
 }
 
 .menubar .logo {
@@ -61,7 +61,7 @@ body {
 .header_area {
     padding-top: 150px;
     text-align: center;
-    color: #fff;
+    color: 	#000000;
     margin: 0 auto;
     width: 660px;
 }
